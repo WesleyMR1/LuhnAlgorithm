@@ -21,10 +21,12 @@ public class Main {
             credit = Long.parseLong(JOptionPane.showInputDialog("Digite o número do cartão: "));
         } while (credit <= 0);
         //
+        
         workingCC = credit;
+        
+        
         while (workingCC > 0) {
-            ultimo = Integer.parseInt((workingCC % 10));
-            System.out.println(ultimo);
+            ultimo = ((workingCC % 10));
             soma += ultimo;
             workingCC = workingCC / 100;
 
@@ -32,7 +34,7 @@ public class Main {
         //
         workingCC = (credit / 10);
         while (workingCC > 0) {
-            ultimo = Integer.parseInt((workingCC % 10));
+            ultimo = (workingCC % 10);
             mult = (ultimo * 2);
             soma = (soma + (mult % 10) + (mult / 10));
             workingCC = workingCC / 100;
@@ -47,11 +49,12 @@ public class Main {
         for (int i = 0; i < (count - 2); i++) {
             divisor = divisor * 10;
         }
-
+        
+        
         //
         System.out.println((credit/divisor));
-        int primeiroDigito = Integer.parseInt((credit / divisor));
-        int primeESegDigito = Integer.parseInt((credit / (divisor / 10)));
+        int primeiroDigito = (credit / divisor);
+        int primeESegDigito = (credit / (divisor / 10));
         //
         if ((soma % 10) == 0) {
             if (primeiroDigito == 4 && (count == 13 || count == 16)) {
@@ -67,6 +70,7 @@ public class Main {
             result = "INVALID";
         }
         System.out.println(result);
+
     }
 
 }
